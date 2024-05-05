@@ -1,0 +1,91 @@
+/* Body Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333; /* Dark text color */
+    background-color: #f9f7f5; /* Light neutral background */
+}
+
+/* Header Styles */
+#app_header {
+    text-align: center;
+    background-color: #fbeee7; /* Light pastel color */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    padding: 40px 20px; /* Add padding for spacing */
+}
+
+#header_h1 {
+    font-weight: bold;
+    font-size: 3em; /* Larger font size for header */
+    color: #333; /* Dark text color */
+    margin-bottom: 15px; /* Add spacing */
+}
+
+#header_h3 {
+    font-style: italic;
+    font-weight: lighter;
+    color: #666; /* Darker gray color */
+    font-size: 1.1em; /* Adjust font size */
+}
+
+/* Body Styles */
+#app_body {
+    text-align: center;
+    padding: 30px; /* Add padding for spacing */
+}
+
+#body_h2 {
+    font-weight: lighter; 
+    font-size: 1.6em; /* Slightly larger font size */
+    margin-bottom: 25px; /* Add spacing */
+}
+
+/* Form Styles */
+#app_form {
+    background-color: #fbeee7; /* Light pastel color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    padding: 30px; /* Add padding for spacing */
+}
+
+#form_h4 {
+    font-style: italic;
+    font-weight: lighter;
+    font-size: 1em; /* Adjust font size */
+    color: #666; /* Darker gray color */
+    margin-bottom: 15px; /* Add spacing */
+}
+
+#text_field {
+    padding: 12px; /* Increase padding for text input */
+}
+
+#submit_samples {
+    background-color: #ff7f50; /* Coral color for button */
+    color: white; /* White text color */
+    padding: 15px 30px; /* Add padding for spacing */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Add border radius for rounded corners */
+    cursor: pointer; /* Add pointer cursor */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+#submit_samples:hover {
+    background-color: #ff6347; /* Darker coral color on hover */
+}
+
+/* Footer Styles */
+#app_footer {
+    background-color: #fbeee7; /* Light pastel color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    padding: 30px; /* Add padding for spacing */
+}
+
+#about {
+    font-style: italic;
+    font-size: 0.9em; /* Adjust font size */
+    color: #666; /* Darker gray color */
+    margin-top: 20px; /* Add spacing */
+    text-align: center;
+
+}

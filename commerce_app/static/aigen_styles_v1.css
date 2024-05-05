@@ -1,0 +1,90 @@
+/* Set up a modern font stack */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Adjustments to the HTML */
+html {
+    background-color: #f9f7f5; /* Light neutral background */
+    margin: 0; /* Reset margin */
+    padding: 0; /* Reset padding */
+}
+
+/* Header Styles */
+#app_header {
+    text-align: center;
+    background-color: #fbeee7; /* Light pastel color */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    padding: 20px; /* Add some padding for spacing */
+}
+
+#header_h1 {
+    font-weight: bold;
+    font-size: 2em; /* Larger font size for header */
+}
+
+#header_h3 {
+    font-style: italic;
+    font-weight: lighter;
+    color: #666; /* Darker gray color */
+    margin-top: 5px; /* Add some spacing */
+}
+
+/* Body Styles */
+#app_body {
+    text-align: center;
+    color: #333; /* Dark text color */
+    padding: 20px; /* Add some padding for spacing */
+}
+
+#body_h2 {
+    font-weight: lighter; 
+    font-size: 1.2em; /* Slightly larger font size */
+    margin-bottom: 20px; /* Add some spacing */
+}
+
+/* Form Styles */
+#app_form {
+    background-color: #fbeee7; /* Light pastel color */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    padding: 20px; /* Add some padding for spacing */
+}
+
+#form_h4 {
+    font-style: italic;
+    font-weight: lighter;
+    font-size: 0.8em; /* Smaller font size */
+    color: #666; /* Darker gray color */
+}
+
+#text_field {
+    padding: 10px; /* Increase padding for text input */
+}
+
+#submit_samples {
+    background-color: #ff7f50; /* Coral color for button */
+    color: white; /* White text color */
+    padding: 10px 20px; /* Add some padding for spacing */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Add border radius for rounded corners */
+    cursor: pointer; /* Add pointer cursor */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+#submit_samples:hover {
+    background-color: #ff6347; /* Darker coral color on hover */
+}
+
+/* Footer Styles */
+#app_footer {
+    background-color: #fbeee7; /* Light pastel color */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    padding: 20px; /* Add some padding for spacing */
+}
+
+#about {
+    font-style: italic;
+    font-size: 0.8em; /* Smaller font size */
+    color: #666; /* Darker gray color */
+    margin-top: 10px; /* Add some spacing */
+}
