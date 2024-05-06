@@ -8,7 +8,10 @@ CSVPATH: str = "test_files/csv_test.csv"
 df_template = csv_to_df(path=CSVPATH)
 # print(df_template)
 
-new_user = User().create_user(
+df = df_template
+
+new_user = User()
+user = new_user.create_user(
     id="1",
     email_address="email@none",
     user_name="username",
@@ -20,15 +23,17 @@ new_user = User().create_user(
 
 
 new_rows = pd.DataFrame(
-    new_user
-    # {
-    #     "id": new_user.id,
-    #     "email_address": new_user.email_address,
-    #     "user_name": new_user.user_name,
-    #     "f_name": new_user.f_name,
-    #     "l_name": new_user.l_name,
-    #     "address": new_user.address,
-    #     "created_date": new_user.created_date,
-    # }
+    {
+        "id": new_user.id,
+        "email_address": new_user.email_address,
+        "user_name": new_user.user_name,
+        "f_name": new_user.f_name,
+        "l_name": new_user.l_name,
+        "address": new_user.address,
+        "created_date": new_user.created_date,
+    },
+    index=[0],
 )
-print(new_rows)
+
+df = pd.concat([df, new_rows], ignore_index=True)
+print(df)
