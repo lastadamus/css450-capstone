@@ -2,14 +2,13 @@ from modules.data_handlers import csv_to_df, get_df_row, insert_df_row
 from models.users import User
 import pandas as pd
 
-# CSVPath: test_files/csv_test.csv
 CSVPATH: str = "test_files/csv_test.csv"
 
+"""Create an empty df_template for testing, then create a df with template"""
 df_template = csv_to_df(path=CSVPATH)
-# print(df_template)
-
 df = df_template
 
+"""Create a new user Object by setting attributes"""
 new_user = User()
 user = new_user.create_user(
     id="1",
@@ -21,7 +20,7 @@ user = new_user.create_user(
     created_date="yyyy-mm-dd",
 )
 
-
+"""Pass the user attributes into a DataFrame object as :new_rows:"""
 new_rows = pd.DataFrame(
     {
         "id": new_user.id,
@@ -35,5 +34,6 @@ new_rows = pd.DataFrame(
     index=[0],
 )
 
+"""Join the original df and the new rows together, adding new rows to original"""
 df = pd.concat([df, new_rows], ignore_index=True)
 print(df)
