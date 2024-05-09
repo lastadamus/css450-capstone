@@ -17,10 +17,16 @@ def root_redirect():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
-    """Prompt users to sign-in or register an account"""
+    """Prompt users to sign-in or register an account
+    :Params:
+        session[credentials]: username and password
+
+    :POST: redirects to ("/auth") to validate user sign-in
+    :GET: renders the Login page
+    """
+
     if request.method == "POST":
         session["credentials"] = request.form.to_dict()
-        print(session["credentials"])
         return redirect("/auth")
     elif request.method == "GET":
         return render_template("login.html")
@@ -28,21 +34,42 @@ def login():
 
 @app.route("/auth", methods=["GET"])
 def auth():
+    """If User credentials are present and valid, generate an Auth-Key and set Auth to True
+
+    :Params:
+        session[auth-key]: uuid to make each session unique
+        session[auth]: boolean to allow app to check for auth
+
+    Returns:
+        Redirects the user to the application's ("/shopping_list") route
+        Returns a JSON response for invalid credentials
+    """
     if not session["credentials"]["username"] or not session["credentials"]["password"]:
         return redirect("/login")
     if request.method == "GET":
-        if session["credentials"]["username"] == "database_value":
-            if session["credentials"]["password"] == "database_value":
-                session["auth-key"] = uuid.uuid4()
-                session["auth"] = True
-                return redirect("/shopping_list")
+        if dh.csv_database_validation(
+            username=session["credentials"]["username"],
+            password=session["credentials"]["password"],
+        ):
+            del session["credentials"]["password"]
+            session["auth-key"] = uuid.uuid4()
+            session["auth"] = True
+            return redirect("/shopping_list")
         else:
             return {"status_code": 403, "message": "Invalid credentials entered"}
 
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
-    """Allows users to register a new account"""
+    """Allows users to register a new account. Inserts the new user account to database.
+
+    :Params:
+        user_profile[id]: unique identifier for each user
+        user_profile[created_date]: track user signup dates
+        rows(pd.DataFrame): new rows to insert to users "database"
+        df(pd.DataFrame): existing "database" of users
+        df_new(pd.DataFrame): new dataframe containing new records
+    """
     if request.method == "POST":
         user_profile = request.form.to_dict()
         del user_profile["conf_password"]
@@ -80,6 +107,7 @@ def register():
             df = dh.csv_to_df(
                 "/Users/justin/css450-capstone/css450-capstone/df_csv.csv"
             )
+            df = ""
             df_new = dh.insert_df_row(df=df, new_rows=rows)
             dh.df_to_csv(df=df_new)
         except Exception as e:
@@ -87,6 +115,15 @@ def register():
         return redirect("/login")
     elif request.method == "GET":
         return render_template("register.html")
+
+
+@app.route("/signout", methods=["GET"])
+def sign_out():
+    if request.method == "GET":
+        del session["auth"]
+        del session["auth-key"]
+        del session["credentials"]
+        return redirect("/login")
 
 
 @app.route("/shopping_list", methods=["GET", "POST"])
