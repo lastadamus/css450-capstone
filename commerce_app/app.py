@@ -47,11 +47,13 @@ def auth():
     if not session["credentials"]["username"] or not session["credentials"]["password"]:
         return redirect("/login")
     if request.method == "GET":
-        if session["credentials"]["username"] == "database_value":
-            if session["credentials"]["password"] == "database_value":
-                session["auth-key"] = uuid.uuid4()
-                session["auth"] = True
-                return redirect("/shopping_list")
+        if dh.csv_database_validation(
+            username=session["credentials"]["username"],
+            password=session["credentials"]["password"],
+        ):
+            session["auth-key"] = uuid.uuid4()
+            session["auth"] = True
+            return redirect("/shopping_list")
         else:
             return {"status_code": 403, "message": "Invalid credentials entered"}
 
