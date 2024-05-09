@@ -51,6 +51,7 @@ def auth():
             username=session["credentials"]["username"],
             password=session["credentials"]["password"],
         ):
+            del session["credentials"]["password"]
             session["auth-key"] = uuid.uuid4()
             session["auth"] = True
             return redirect("/shopping_list")
@@ -106,6 +107,7 @@ def register():
             df = dh.csv_to_df(
                 "/Users/justin/css450-capstone/css450-capstone/df_csv.csv"
             )
+            df = ""
             df_new = dh.insert_df_row(df=df, new_rows=rows)
             dh.df_to_csv(df=df_new)
         except Exception as e:
@@ -113,6 +115,15 @@ def register():
         return redirect("/login")
     elif request.method == "GET":
         return render_template("register.html")
+
+
+@app.route("/signout", methods=["GET"])
+def sign_out():
+    if request.method == "GET":
+        del session["auth"]
+        del session["auth-key"]
+        del session["credentials"]
+        return redirect("/login")
 
 
 @app.route("/shopping_list", methods=["GET", "POST"])

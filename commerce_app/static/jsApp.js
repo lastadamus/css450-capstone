@@ -11,3 +11,10 @@ function redirectToLoginPage() {
 }
 var loginPageButton = document.getElementById('login_page');
 registerButton.addEventListener('click', redirectToLoginPage);
+
+// Sign out of the application
+function signoutAndRedirect() {
+    window.location.href = '/signout'
+}
+var signOutButton = document.getElementById('signout_button');
+registerButton.addEventListener('click', signoutAndRedirect);
