@@ -6,6 +6,10 @@ def csv_to_df(path: str) -> pd.DataFrame:
     return pd.read_csv(path)
 
 
+def df_to_csv(df: pd.DataFrame) -> str:
+    return df.to_csv(path_or_buf="df_csv.csv", index=False)
+
+
 def get_df_row(df: pd.DataFrame, id: str) -> pd.Series:
     """Gets a row from a dataframe by id: str"""
     return df.iloc[df[id]]
