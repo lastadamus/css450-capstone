@@ -2,11 +2,12 @@ import pandas as pd
 
 
 def csv_to_df(path: str) -> pd.DataFrame:
-    """Convert a CSVFile path to PD DataFrame"""
+    """Convert a CSVFile path to DataFrame"""
     return pd.read_csv(path)
 
 
 def df_to_csv(df: pd.DataFrame) -> str:
+    """Convert DataFrame to csv"""
     return df.to_csv(path_or_buf="df_csv.csv", index=False)
 
 

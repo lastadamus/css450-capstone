@@ -1,10 +1,18 @@
 from models import models
 
-base_user = models.BaseUser()
-print(base_user)
-
 
 class User(models.BaseUser):
+    """User model with get and create user functions
+
+    Args:
+        models.(BaseUser): Base model for User
+
+    Functions:
+        __init__
+        get_user() => returns a user from database
+        create_user() => creates a new user given arguments
+    """
+
     def __init__(self) -> None:
         super().__init__()
         self.created_date = ""
@@ -53,6 +61,21 @@ class User(models.BaseUser):
         last_name: str,
         created_date: str,
     ):
+        """Creates User JSON object for inserting a new User to database
+
+        Args:
+            id (str): uuid4 casted as a string
+            username (str): username of the user
+            physical_address (str): physical address of the user
+            password (str): password of the user (to be encrypted)
+            email_address (str): email address of the user
+            first_name (str): first name of the user
+            last_name (str): last name of the user
+            created_date (str): timestamp of user creation casted as string
+
+        Returns:
+            dict: Representation of new User as a Dictionary
+        """
         self.id = id
         self.user_name = username
         self.address = physical_address
