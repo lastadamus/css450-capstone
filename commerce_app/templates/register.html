@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Commerce App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="static/aigen_styles_v2.css">
+    <script src="static/jsApp.js"></script>
+</head>
+<header id="app_header">
+        <h1 id="header_h1">Commerce App V1</h1>
+        <h3 id="header_h3">Register</h3>
+    </header>
+<body>
+    <div id="app_body">
+        <h2 id="body_h2">New Account</h2>
+        <div id="app_form">
+            <form action="/register" method="post">
+                <h4 id="form_h4">User Details</h4>
+                <div id="user_profile">
+                    <label for="username" id="username_label">Username: </label>
+                    <input type="username" id="username" name="username" required="true">
+                    <br>
+                    <label for="email_address" id="email_label">Email Address: </label>
+                    <input type="email" id="email_address" name="email_address" required="true">
+                    <br>
+                    <label for="password" id="password_label">Password: </label>
+                    <input type="password" id="password" name="password" required="true">
+                    <br>
+                    <label for="conf_password" id="conf_password_label">Confirm Password: </label>
+                    <input type="password" id="conf_password" name="conf_password" required="true">
+                    <br>
+                    <label for="first_name" id="f_name_label">First Name: </label>
+                    <input type="text" id="first_name" name="first_name" required="true">
+                    <br>
+                    <label for="last_name" id="l_name_label">Last Name: </label>
+                    <input type="text" id="last_name" name="last_name" required="true">
+                    <br>
+                    <label for="physical_address" id="phys_address_label">Address: </label>
+                    <input type="text" id="physical_address" name="physical_address">
+                </div>
+                <br>
+                <input type="submit" id="submit_tiles">
+            </form>
+            <button id="login_page" onclick="redirectToLoginPage()">Return to Login</button>
+        </div>
+    </div>
+</body>
+<footer id="app_footer">
+        <div id="about">
+            <p>Created By: Justin Reyes</p>
+            <p><a href="mailto:justin.reyes@email.com">Contact Me</a></p>
+            <p>Python 3.12 / Flask / Ubuntu Server / MySQL</p>
+        </div>
+    </footer>
+</html>

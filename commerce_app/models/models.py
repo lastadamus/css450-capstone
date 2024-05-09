@@ -7,9 +7,9 @@ class BaseUser:
     id: str
     email_address: str
     user_name: str
-    f_name: str = ""
-    l_name: str = ""
-    address: dict[str, str]
+    first_name: str = ""
+    last_name: str = ""
+    address: str
     created_date: str
 
 

@@ -84,4 +84,5 @@ body {
     font-size: 0.8em; /* Smaller font size */
     color: #666; /* Darker gray color */
     margin-top: 10px; /* Add spacing */
+    text-align: center;
 }

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Commerce App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="static/aigen_styles_v2.css">
+    <script src="static/jsApp.js"></script>
+</head>
+<header id="app_header">
+        <h1 id="header_h1">Commerce App V1</h1>
+        <h3 id="header_h3">Welcome</h3>
+    </header>
+<body>
+    <div id="app_body">
+        <h2 id="body_h2">Login</h2>
+        <div id="app_form">
+            <form action="/login" method="post">
+                <h4 id="form_h4">Sign-In</h4>
+                <div id="credentials">
+                    <label for="username" id="user_label">Username</label>
+                    <br>
+                    <input type="username" id="username" name="username">
+                    <br>
+                    <label for="password" id="pass_label">Password</label>
+                    <br>
+                    <input type="password" id="password" name="password">
+                </div>
+                <br>
+                <input type="submit" id="submit_tiles">
+            </form>
+            <button id="register" onclick="redirectToRegistration()">Register</button>
+        </div>
+    </div>
+</body>
+<footer id="app_footer">
+        <div id="about">
+            <p>Created By: Justin Reyes</p>
+            <p><a href="mailto:justin.reyes@email.com">Contact Me</a></p>
+            <p>Python 3.12 / Flask / Ubuntu Server / MySQL</p>
+        </div>
+    </footer>
+</html>
